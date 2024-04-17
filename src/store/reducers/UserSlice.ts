@@ -1,6 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../../models";
 
+//Создание slice и описание его моделей
+
 interface UserState {
   users: IUser[];
   loading: boolean;

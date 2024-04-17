@@ -3,6 +3,7 @@ import { AppDispatch } from "../store";
 import { IUser } from "../../models";
 import { userSlice } from "./UserSlice";
 
+//ActionCreators с запросом на сервер
 export const fetchUsers = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(userSlice.actions.fetchUsers());
