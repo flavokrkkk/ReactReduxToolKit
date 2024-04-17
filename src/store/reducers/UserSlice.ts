@@ -1,15 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "../../models/IUser";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IUser } from "../../models";
 
 interface UserState {
   users: IUser[];
-  isLoading: boolean;
+  loading: boolean;
   error: null | string;
 }
 
 const initialState = <UserState>{
   users: [],
-  isLoading: false,
+  loading: false,
   error: null,
 };
 
@@ -17,8 +17,16 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    addUser(state, { payload }) {
-      state.users.push(payload);
+    fetchUsers(state) {
+      state.loading = true;
+    },
+    fetchUsersSuccess(state, { payload }: PayloadAction<IUser[]>) {
+      state.loading = false;
+      state.users = payload;
+    },
+    fetchUsersError(state, { payload }: PayloadAction<string>) {
+      state.loading = false;
+      state.error = payload;
     },
   },
 });

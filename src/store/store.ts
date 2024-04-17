@@ -11,11 +11,7 @@ export const setupStore = () => {
   });
 };
 
-//Получаем тип нашего состояния
+//Типы для взаимодействия с хранилищем
 export type RootState = ReturnType<typeof rootReducer>;
-
-//Получаем тип нашего store
 export type AppStore = ReturnType<typeof setupStore>;
-
-//Получаем тип нашего dispatch
 export type AppDispatch = AppStore["dispatch"];
