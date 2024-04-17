@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
-import { fetchUsers } from "./store/reducers/ActionCreators";
 import { Card, CardBody, CardTitle, Container } from "react-bootstrap";
+import { fetchUsers } from "./store/reducers/ActionCreators";
 
 const App = () => {
   const { error, loading, users } = useAppSelector(
@@ -22,7 +22,7 @@ const App = () => {
       <h1 className=" text-center mb-3">Users</h1>
       <hr />
       {users.map((user) => (
-        <Card className="mb-3 text-center">
+        <Card key={user.id} className="mb-3 text-center">
           <CardTitle>
             {user.id} - {user.name}
           </CardTitle>
