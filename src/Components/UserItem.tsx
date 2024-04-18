@@ -9,7 +9,7 @@ const UserItem = ({ users }: UserItemProps) => {
   return (
     <Container>
       {users.map((user) => (
-        <Card key={user.id} className="mb-3 text-center">
+        <Card key={user.id} className="mb-3 text-center p-3">
           <CardTitle>
             {user.id} - {user.name}
           </CardTitle>

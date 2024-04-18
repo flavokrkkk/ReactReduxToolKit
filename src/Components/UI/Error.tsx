@@ -7,7 +7,7 @@ interface ErrorProps {
 const Error = ({ error }: ErrorProps) => {
   return (
     <Container className="mt-4">
-      <h2 className="text-center">{error}</h2>
+      <h2 className="text-center">Произошла ошибка! {error}</h2>
     </Container>
   );
 };
